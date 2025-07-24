@@ -25,7 +25,7 @@ export class AuthService {
             throw new Error('User not found');
         }
         return {
-            access_token: this.jwtService.sign({ username: user.username }),
+            access_token: this.jwtService.sign({ id: user.id }),
         };
     }
 }

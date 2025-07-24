@@ -3,6 +3,7 @@ import { AppGateway } from './app.gateway';
 import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtModule } from '@nestjs/jwt';
+import { jwtConstants } from './auth/constants';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { JwtModule } from '@nestjs/jwt';
     }),
     JwtModule.register({
       global: true,
-      secret: 'MuRemake!!!ddm223',
+      secret: jwtConstants.secret,
     }),
   ],
   providers: [AppGateway],
